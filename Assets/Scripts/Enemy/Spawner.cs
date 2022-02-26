@@ -33,8 +33,10 @@ public class Spawner : Pool
 
     private void Spawn(GameObject obj)
     {
+        float randomY = Random.Range(_minSpawnPoint, _maxSpawnPoint);
+
         obj.SetActive(true);
-        obj.transform.position = new Vector2(Container.position.x, Container.position.y + Random.Range(_minSpawnPoint, _maxSpawnPoint));
+        obj.transform.position = new Vector2(Container.position.x, Container.position.y + randomY);
         DisableObject();
     }
 }

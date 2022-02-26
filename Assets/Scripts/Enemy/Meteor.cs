@@ -8,4 +8,11 @@ public class Meteor : MonoBehaviour
 
     public int Damage => _damage;
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out PlayerHealth player))
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }

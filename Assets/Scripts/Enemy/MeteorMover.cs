@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MeteorMover : MonoBehaviour
 {
-
     [SerializeField] private float _speed;
 
     private void Update()
