@@ -21,6 +21,19 @@ public class PlayerHealth : MonoBehaviour
     public int MaxHealth => _maxHealth;
     public int CurrentHealth => _currentHealth;
 
+    private void OnValidate()
+    {
+        if (_maxHealth <= 0)
+        {
+            _maxHealth = 25;
+        }
+    }
+
+    private void Start()
+    {
+        _currentHealth = _maxHealth;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out Meteor meteor))
