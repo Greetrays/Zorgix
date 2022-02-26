@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18627955, g: 0.107422575, b: 0.3207547, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -385,6 +385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834748211}
   - component: {fileID: 834748212}
+  - component: {fileID: 834748213}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -463,6 +464,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &834748213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834748210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7d85c6050fbb74688216cb0fd61a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1747004991}
+  _bar: {fileID: 834748212}
 --- !u!1 &1318143583
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,6 +942,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3111302950120352274, guid: 924948aae367d214a9b7bad5cf11274e,
+        type: 3}
+      propertyPath: _speedMove
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 3111302950120352275, guid: 924948aae367d214a9b7bad5cf11274e,
         type: 3}
       propertyPath: m_LocalPosition.x

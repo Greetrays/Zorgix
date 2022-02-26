@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8698963343957509901}
   - component: {fileID: 8698963343957509900}
   - component: {fileID: 8698963343957509899}
+  - component: {fileID: 8889908828617085657}
   m_Layer: 0
   m_Name: MiddleMeteor
   m_TagString: Untagged
@@ -136,3 +137,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
+--- !u!95 &8889908828617085657
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8698963343957509898}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3d56a0132f798034291b09e198d1acd1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
