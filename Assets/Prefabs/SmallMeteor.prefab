@@ -110,7 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e59830565170e74f930c70a4739cfdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 12
+  _minSpeedMove: 12
+  _maxSpeedMove: 14
+  _speedRotation: 5
+  _targetRotation: {x: 0, y: 0, z: 360, w: 0}
 --- !u!95 &1429768059575632149
 Animator:
   serializedVersion: 3
