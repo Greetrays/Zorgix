@@ -162,7 +162,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -478,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1747004991}
   _bar: {fileID: 834748212}
+  _speedChange: 15
 --- !u!1 &1318143583
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: -0.000061035156, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955610534
@@ -945,7 +946,7 @@ PrefabInstance:
     - target: {fileID: 3111302950120352274, guid: 924948aae367d214a9b7bad5cf11274e,
         type: 3}
       propertyPath: _speedMove
-      value: 14
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3111302950120352275, guid: 924948aae367d214a9b7bad5cf11274e,
         type: 3}
@@ -1001,6 +1002,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111302950120352277, guid: 924948aae367d214a9b7bad5cf11274e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.012045026
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111302950120352277, guid: 924948aae367d214a9b7bad5cf11274e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.57935154
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111302950120352277, guid: 924948aae367d214a9b7bad5cf11274e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0019696355
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111302950120352277, guid: 924948aae367d214a9b7bad5cf11274e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.33447754
       objectReference: {fileID: 0}
     - target: {fileID: 3111302950120352278, guid: 924948aae367d214a9b7bad5cf11274e,
         type: 3}
