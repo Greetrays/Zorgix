@@ -126,4 +126,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e648f1a6547a248a328ec7cf26ec16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _countHealth: 20
+  _chance: 0.4
+  _countHealth: 10

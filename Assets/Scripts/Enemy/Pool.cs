@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Pool : MonoBehaviour
+public abstract class Pool : MonoBehaviour
 {
     [Header("Пул")]
-    [SerializeField] private int _capacity;
     [SerializeField] protected Transform Container;
 
     private List<GameObject> _pool = new List<GameObject>();
+    private int _capacity;
 
-    protected void Init(List<GameObject> templates)
+    protected void Init(List<GameObject> templates, int capacity)
     {
         _pool.Clear();
+        _capacity = capacity;
 
         for(int i = 0; i < _capacity; i++)
         {
@@ -23,11 +24,22 @@ public class Pool : MonoBehaviour
         }       
     }
 
-    protected bool TryGetObject(out GameObject gameObject)
+    protected void Init(List<GameObject> templates)
     {
-        gameObject = _pool.FirstOrDefault(o => o.activeSelf == false);
+        _pool.Clear();
 
-        return gameObject != null;
+        for (int i = 0; i < templates.Count; i++)
+        {
+            var newObject = Instantiate(templates[i]);
+            newObject.SetActive(false);
+            _pool.Add(newObject);
+        }      
+    }
+    protected bool TryGetObject(out GameObject gameObj)
+    {
+        gameObj = _pool.FirstOrDefault(o => o.activeSelf == false);
+
+        return gameObj != null;
     }
 
     protected void DisableObject()

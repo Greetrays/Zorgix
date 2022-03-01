@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Medicine : MonoBehaviour
+public class Medicine : UpgradeObject
 {
     [SerializeField] private int _countHealth;
 
