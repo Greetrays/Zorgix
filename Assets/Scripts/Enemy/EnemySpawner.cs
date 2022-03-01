@@ -10,6 +10,7 @@ public class EnemySpawner : Pool
     [SerializeField] private float _minSpawnPoint;
     [SerializeField] private float _maxSpawnPoint;
     [SerializeField] private Button _nextWaveButton;
+    [SerializeField] private int _capacityPool;
 
     private List<GameObject> _templates;
     private float _elapsedTimeSpawn;
@@ -30,7 +31,7 @@ public class EnemySpawner : Pool
     {
         SetWave(_currentNumberWave);
         _templates = _currentWave.Templates;
-        Init(_templates);
+        Init(_templates, _capacityPool);
     }
 
     private void Update()
@@ -65,7 +66,7 @@ public class EnemySpawner : Pool
         _nextWaveButton.gameObject.SetActive(false);
         SetWave(++_currentNumberWave);
         _templates = _currentWave.Templates;
-        Init(_templates);      
+        Init(_templates, _capacityPool);      
     }
 
     private void Spawn(GameObject obj)
