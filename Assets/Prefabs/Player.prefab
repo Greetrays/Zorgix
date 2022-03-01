@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3111302950120352275}
   - component: {fileID: 3111302950120352276}
+  - component: {fileID: 1747004991}
   - component: {fileID: 3111302950120352274}
   - component: {fileID: 3111302950120352273}
   - component: {fileID: 1747004988}
   - component: {fileID: 1747004992}
-  - component: {fileID: 1747004991}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -86,6 +86,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1747004991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3111302950120352278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ae95a2a93d38f419a2a6b4169fdcfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 50
+  _changeHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1747004992}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: eeaf74736338d544ea0e1d26c400defb,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3111302950120352274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0516d86b7cb49d4c99c37e1ae8f6011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedMove: 4
+  _speedMove: 14
   _minDistanceX: -9.1
   _maxDistanceX: -2
   _minDistanceY: -4.5
@@ -236,31 +264,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1747004991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3111302950120352278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ae95a2a93d38f419a2a6b4169fdcfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 50
-  _changeHealth:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1747004992}
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: eeaf74736338d544ea0e1d26c400defb,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

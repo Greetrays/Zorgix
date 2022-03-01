@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeteorMover : MonoBehaviour
+public class ObjectMover : MonoBehaviour
 {
     [SerializeField] private float _minSpeedMove;
     [SerializeField] private float _maxSpeedMove;
