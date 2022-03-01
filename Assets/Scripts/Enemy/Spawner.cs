@@ -1,34 +1,71 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : Pool
 {
-    [SerializeField] private List<GameObject> _templates;
+    [Header("Спаунер")]
     [SerializeField] private float _delay;
     [SerializeField] private float _minSpawnPoint;
     [SerializeField] private float _maxSpawnPoint;
+    [SerializeField] private Button _nextWaveButton;
 
-    private float _elepsedTime;
+    private List<GameObject> _templates;
+    private float _elapsedTimeSpawn;
+
+    [Header("Волны")]
+    [SerializeField] private List<Wave> _waves;
+
+    private float _elapsedWaveTime;
+    private Wave _currentWave;
+    private int _currentNumberWave;
+
+    private void OnEnable()
+    {
+        _nextWaveButton.onClick.AddListener(TryStartNextWave);
+    }
 
     private void Start()
     {
+        SetWave(_currentNumberWave);
+        _templates = _currentWave.Templates;
         Init(_templates);
     }
 
     private void Update()
     {
-        _elepsedTime += Time.deltaTime;
+        _elapsedTimeSpawn += Time.deltaTime;
+        _elapsedWaveTime += Time.deltaTime;
 
-        if (_elepsedTime >= _delay)
+        if (_elapsedWaveTime < _currentWave.Duration)
         {
-            if (TryGetObject(out GameObject obj))
+            if (_elapsedTimeSpawn >= _delay)
             {
-                Spawn(obj);
-            }
+                if (TryGetObject(out GameObject obj))
+                {
+                    Spawn(obj);
+                }
 
-            _elepsedTime = 0;
+                _elapsedTimeSpawn = 0;
+            }
         }
+        else
+        {
+            if (_waves.Count > _currentNumberWave + 1)
+            {
+               _nextWaveButton.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void TryStartNextWave()
+    {
+        _elapsedWaveTime = 0;
+        _nextWaveButton.gameObject.SetActive(false);
+        SetWave(++_currentNumberWave);
+        _templates = _currentWave.Templates;
+        Init(_templates);      
     }
 
     private void Spawn(GameObject obj)
@@ -38,5 +75,21 @@ public class Spawner : Pool
         obj.SetActive(true);
         obj.transform.position = new Vector2(Container.position.x, Container.position.y + randomY);
         DisableObject();
+    }
+
+    private void SetWave(int numberWave)
+    {
+        _currentWave = _waves[numberWave];
+    }
+
+    [System.Serializable]
+    public class Wave
+    {
+        [SerializeField] private List<GameObject> _templates;
+        [SerializeField] private float _duration;
+        [SerializeField] private AudioClip _sound;
+
+        public float Duration => _duration;
+        public List<GameObject> Templates => _templates;
     }
 }

@@ -5,14 +5,16 @@ using System.Linq;
 
 public class Pool : MonoBehaviour
 {
+    [Header("Пул")]
     [SerializeField] private int _capacity;
-
     [SerializeField] protected Transform Container;
 
     private List<GameObject> _pool = new List<GameObject>();
 
     protected void Init(List<GameObject> templates)
     {
+        _pool.Clear();
+
         for(int i = 0; i < _capacity; i++)
         {
             var newObject = Instantiate(templates[Random.Range(0, templates.Count)], Container);
