@@ -38,13 +38,30 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.TryGetComponent(out Meteor meteor))
         {
-            _currentHealth -= meteor.Damage;
-            _changeHealth?.Invoke();
+            Change(-meteor.Damage);
 
             if (_currentHealth <= 0)
             {
                 Dying?.Invoke();
             }
         }
+        else if (collision.TryGetComponent(out Medicine medicine))
+        {
+            if (_currentHealth + medicine.CountHealth > _maxHealth)
+            {
+                _currentHealth = _maxHealth;
+                _changeHealth?.Invoke();
+            }
+            else if (_currentHealth + medicine.CountHealth <= _maxHealth)
+            {
+                Change(medicine.CountHealth);
+            }
+        }
+    }
+
+    private void Change(int health)
+    {
+        _currentHealth += health;
+        _changeHealth?.Invoke();
     }
 }

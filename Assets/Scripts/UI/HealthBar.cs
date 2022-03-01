@@ -40,7 +40,7 @@ public class HealthBar : MonoBehaviour
 
     private IEnumerator ChangeHealth()
     {
-        while(_bar.value > _player.CurrentHealth)
+        while(_bar.value != _player.CurrentHealth)
         {
             _bar.value = Mathf.MoveTowards(_bar.value, _player.CurrentHealth, _speedChange * Time.deltaTime);
 
