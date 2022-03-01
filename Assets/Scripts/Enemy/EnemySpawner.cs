@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Spawner : Pool
+public class EnemySpawner : Pool
 {
     [Header("Спаунер")]
     [SerializeField] private float _delay;
