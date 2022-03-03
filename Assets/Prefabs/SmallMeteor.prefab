@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1293785672839638404}
   - component: {fileID: 1429768059575632149}
   - component: {fileID: 7286512426490141039}
-  m_Layer: 0
+  - component: {fileID: 1827331820123598976}
+  m_Layer: 8
   m_Name: SmallMeteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,8 +113,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minSpeedMove: 12
   _maxSpeedMove: 14
-  _speedRotation: 5
-  _targetRotation: {x: 0, y: 0, z: 360, w: 0}
+  _minDistanceShieldTrigger: 4
+  _contactFilter2D:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 768
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!95 &1429768059575632149
 Animator:
   serializedVersion: 3
@@ -149,3 +163,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!50 &1827331820123598976
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293785672839638407}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

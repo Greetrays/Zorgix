@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5614241820889140997}
   - component: {fileID: 5614241820889140996}
   - component: {fileID: 5614241820889140995}
-  m_Layer: 0
+  - component: {fileID: 4941327190413049239}
+  m_Layer: 8
   m_Name: Medicine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,6 +115,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minSpeedMove: 7
   _maxSpeedMove: 8
+  _minDistanceShieldTrigger: 4
+  _contactFilter2D:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 512
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!114 &5614241820889140995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,5 +142,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e648f1a6547a248a328ec7cf26ec16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chance: 0.4
+  _chance: 0.7
   _countHealth: 10
+--- !u!50 &4941327190413049239
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5614241820889140994}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

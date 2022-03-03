@@ -8,6 +8,8 @@ public abstract class Pool : MonoBehaviour
     [Header("Пул")]
     [SerializeField] protected Transform Container;
 
+    [SerializeField] private PlayerShield _player;
+
     private List<GameObject> _pool = new List<GameObject>();
     private int _capacity;
 
@@ -20,6 +22,7 @@ public abstract class Pool : MonoBehaviour
         {
             var newObject = Instantiate(templates[Random.Range(0, templates.Count)], Container);
             newObject.SetActive(false);
+            SetPlayer(newObject);
             _pool.Add(newObject);
         }       
     }
@@ -30,14 +33,32 @@ public abstract class Pool : MonoBehaviour
 
         for (int i = 0; i < templates.Count; i++)
         {
-            var newObject = Instantiate(templates[i]);
+            var newObject = Instantiate(templates[i], Container);
             newObject.SetActive(false);
+            SetPlayer(newObject);
             _pool.Add(newObject);
         }      
     }
+
     protected bool TryGetObject(out GameObject gameObj)
     {
         gameObj = _pool.FirstOrDefault(o => o.activeSelf == false);
+
+        return gameObj != null;
+    }
+
+    protected bool TryGetRandomObject(out GameObject gameObj)
+    {
+        int randomIndex = Random.Range(0, _pool.Count);
+
+        if (_pool[randomIndex].activeSelf == false)
+        {
+            gameObj = _pool[randomIndex];
+        }
+        else
+        {
+            gameObj = null;
+        }
 
         return gameObj != null;
     }
@@ -55,6 +76,14 @@ public abstract class Pool : MonoBehaviour
                     item.SetActive(false);
                 }
             }
+        }
+    }
+
+    private void SetPlayer(GameObject obj)
+    {
+        if (obj.TryGetComponent(out ObjectMover objectMover))
+        {
+            objectMover.SetPlayer(_player);
         }
     }
 }

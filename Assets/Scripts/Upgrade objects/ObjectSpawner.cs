@@ -22,11 +22,12 @@ public class ObjectSpawner : Pool
 
         if (_elepsedTime >= _delay)
         {
-            if (TryGetObject(out GameObject gameObj))
+            if (TryGetRandomObject(out GameObject gameObj))
             {
                 TrySpawn(gameObj);
             }
 
+            DisableObject();
             _elepsedTime = 0;
         }
     }
@@ -43,10 +44,8 @@ public class ObjectSpawner : Pool
             if (GenerateChance() <= obj.Chance)
             {
                 gameObject.SetActive(true);
-                gameObject.transform.position = new Vector2(Container.position.x, Random.Range(_minSpawnPoint, _minSpawnPoint));
+                gameObject.transform.position = new Vector2(Container.position.x, Random.Range(_minSpawnPoint, _maxSpawnPoint));
             }
         }
-
-        DisableObject();
     }
 }

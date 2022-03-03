@@ -10,7 +10,6 @@ public class PlayerHealth : MonoBehaviour
 
     private int _currentHealth;
 
-
     public event UnityAction Dying;
     public event UnityAction ChangeHealth
     {
@@ -20,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int MaxHealth => _maxHealth;
     public int CurrentHealth => _currentHealth;
+    public bool IsShieldActive { get; private set; }
 
     private void OnValidate()
     {
@@ -32,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         _currentHealth = _maxHealth;
+        IsShieldActive = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

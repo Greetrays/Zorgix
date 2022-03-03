@@ -15,22 +15,20 @@ public class PlayerMover : MonoBehaviour
 
     private void Update()
     {
-        /* if (Input.GetMouseButton(0))
-         {
+        if (Input.GetMouseButton(0))
+        {
+           Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-
-             if (Input.GetMouseButtonDown(0))
-             {
-                 newTargetPosition = mousePosition;
-                 oldPosition = transform.position;
-             }
-        */
-
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = Vector2.Lerp(transform.position, mousePosition, _speedMove * Time.deltaTime); ;
-            float correctPositionX = Mathf.Clamp(transform.position.x, _minDistanceX, _maxDistanceX);
-            float correctPositionY = Mathf.Clamp(transform.position.y, _minDistanceY, _maxDistanceY);
-            transform.position = new Vector2(correctPositionX, correctPositionY);
-       // }
+           if (Input.GetMouseButtonDown(0))
+           {
+               newTargetPosition = mousePosition;
+               oldPosition = transform.position;
+           }
+         
+           transform.position = Vector2.Lerp(transform.position, oldPosition + mousePosition - newTargetPosition, _speedMove * Time.deltaTime); ;
+           float correctPositionX = Mathf.Clamp(transform.position.x, _minDistanceX, _maxDistanceX);
+           float correctPositionY = Mathf.Clamp(transform.position.y, _minDistanceY, _maxDistanceY);
+           transform.position = new Vector2(correctPositionX, correctPositionY);
+        }
     }
 }
