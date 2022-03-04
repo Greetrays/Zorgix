@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerShield : MonoBehaviour
+public class PlayerEnergyBarrier : MonoBehaviour
 {
     [SerializeField] private float _timeAction;
     [SerializeField] private UnityEvent _activated;
@@ -16,15 +16,15 @@ public class PlayerShield : MonoBehaviour
         remove => _activated.RemoveListener(value);
     }
 
-    public bool IsShield { get; private set; }
+    public bool IsEnergyBarrier { get; private set; }
     public float ElepsedTime => _elepsedTime;
     public float TimeAction => _timeAction;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out Shield shield))
+        if (collision.TryGetComponent(out EnergyBarrier shield))
         {
-            IsShield = true;
+            IsEnergyBarrier = true;
             StartCoroutine(ChangeTime());
             _activated?.Invoke();
         }
@@ -40,6 +40,6 @@ public class PlayerShield : MonoBehaviour
             yield return null;
         }
 
-        IsShield = false;
+        IsEnergyBarrier = false;
     }
 }

@@ -15,7 +15,7 @@ public class ObjectMover : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private readonly RaycastHit2D[] _collisionObjects = new RaycastHit2D[1];
     private Vector3 _direction;
-    private PlayerShield _player;
+    private PlayerEnergyBarrier _player;
 
     private void OnEnable()
     {
@@ -34,7 +34,7 @@ public class ObjectMover : MonoBehaviour
         transform.position += _direction * _speedMoveRight * Time.deltaTime;
         int countCollision = _rigidbody.Cast(Vector2.left, _contactFilter2D, _collisionObjects, _minDistanceShieldTrigger);
 
-        if (_player.IsShield)
+        if (_player.IsEnergyBarrier)
         {
             if (countCollision > 0)
             {
@@ -50,7 +50,7 @@ public class ObjectMover : MonoBehaviour
         }
     }
 
-    public void SetPlayer(PlayerShield player)
+    public void SetPlayer(PlayerEnergyBarrier player)
     {
         _player = player;
     }

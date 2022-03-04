@@ -2,6 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shield : UpgradeObject
+public class EnergyBarrier : UpgradeObject
 {
 }

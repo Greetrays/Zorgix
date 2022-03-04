@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ShieldPanel : MonoBehaviour
 {
-    [SerializeField] private PlayerShield _player;
+    [SerializeField] private PlayerEnergyBarrier _player;
 
     private Image _panel;
 

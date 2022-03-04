@@ -8,7 +8,7 @@ public abstract class Pool : MonoBehaviour
     [Header("Пул")]
     [SerializeField] protected Transform Container;
 
-    [SerializeField] private PlayerShield _player;
+    [SerializeField] private PlayerEnergyBarrier _player;
 
     private List<GameObject> _pool = new List<GameObject>();
     private int _capacity;
