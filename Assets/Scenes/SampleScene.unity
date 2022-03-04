@@ -343,6 +343,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 629313512}
+  - {fileID: 1725293168}
   m_Father: {fileID: 1784567520}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -388,6 +389,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &577691937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 974889551856521702, guid: 924948aae367d214a9b7bad5cf11274e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3111302948377674799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a9a971c7d2c714bbd22186359befad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &629313511
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +414,7 @@ GameObject:
   - component: {fileID: 629313513}
   - component: {fileID: 629313515}
   m_Layer: 5
-  m_Name: ' ShieldPanel'
+  m_Name: EnergyBarrierPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,6 +715,7 @@ MonoBehaviour:
   _templates:
   - {fileID: 5614241820889140994, guid: 802c75d9b3300aa48a658d0116a2f7a0, type: 3}
   - {fileID: 2182581149325872625, guid: 4b4fea8de6d246e439a887f47cfceb96, type: 3}
+  - {fileID: 8913456926058168828, guid: 97b9490654118224ab2d14c8fb37dc2b, type: 3}
   _minSpawnPoint: -4.5
   _maxSpawnPoint: 4.5
   _delay: 5
@@ -5793,7 +5807,7 @@ MonoBehaviour:
   _minSpawnPoint: -4.5
   _maxSpawnPoint: 4.5
   _nextWaveButton: {fileID: 1118490423}
-  _capacityPool: 50
+  _capacityPool: 30
   _waves:
   - _templates:
     - {fileID: 1293785672839638407, guid: bf3001991d16d8c47921c1bf007a6f10, type: 3}
@@ -5827,6 +5841,94 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1725293167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1725293168}
+  - component: {fileID: 1725293171}
+  - component: {fileID: 1725293170}
+  - component: {fileID: 1725293169}
+  m_Layer: 5
+  m_Name: ShieldPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1725293168
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725293167}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 546335727}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1725293169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725293167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52cc9c71e4a126d4cbfc0507e74e5bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 577691937}
+--- !u!114 &1725293170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725293167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9166968, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: cff05418c511b2044ab523721edd42c3, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1725293171
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725293167}
+  m_CullTransparentMesh: 0
 --- !u!114 &1747004991 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1747004991, guid: 924948aae367d214a9b7bad5cf11274e,
@@ -6113,6 +6215,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 974889551856521702, guid: 924948aae367d214a9b7bad5cf11274e,
+        type: 3}
+      propertyPath: _timeAction
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3111302950120352275, guid: 924948aae367d214a9b7bad5cf11274e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6172,11 +6279,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8556606886770664731, guid: 924948aae367d214a9b7bad5cf11274e,
-        type: 3}
-      propertyPath: _timeAction
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 924948aae367d214a9b7bad5cf11274e, type: 3}

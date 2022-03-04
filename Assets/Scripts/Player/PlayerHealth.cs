@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(PlayerShield))]
+
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int _maxHealth;
     [SerializeField] private UnityEvent _changeHealth;
 
     private int _currentHealth;
+    private PlayerShield _playerShield;
 
     public event UnityAction Dying;
     public event UnityAction ChangeHealth
@@ -33,17 +36,21 @@ public class PlayerHealth : MonoBehaviour
     {
         _currentHealth = _maxHealth;
         IsShieldActive = true;
+        _playerShield = GetComponent<PlayerShield>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out Meteor meteor))
         {
-            Change(-meteor.Damage);
-
-            if (_currentHealth <= 0)
+            if (_playerShield.IsShield == false)
             {
-                Dying?.Invoke();
+                Change(-meteor.Damage);
+
+                if (_currentHealth <= 0)
+                {
+                    Dying?.Invoke();
+                }
             }
         }
         else if (collision.TryGetComponent(out Medicine medicine))

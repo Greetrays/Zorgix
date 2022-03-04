@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
 
-public class ShieldPanel : MonoBehaviour
+public class BuffPanel : MonoBehaviour
 {
-    [SerializeField] private PlayerEnergyBarrier _player;
+    [SerializeField] private TemporaryPlayerUpgrade _player;
 
     private Image _panel;
 

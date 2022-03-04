@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class PlayerEnergyBarrier : TemporaryPlayerUpgrade
+public class PlayerShield : TemporaryPlayerUpgrade
 {
-    public bool IsEnergyBarrier { get; private set; }
+    public bool IsShield { get; private set; }
 
     private void OnEnable()
     {
@@ -19,15 +18,15 @@ public class PlayerEnergyBarrier : TemporaryPlayerUpgrade
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out EnergyBarrier shield))
+        if (collision.TryGetComponent(out Shield shield))
         {
             StartCoroutine(ChangeTime());
-            IsEnergyBarrier = true;
+            IsShield = true;
         }
     }
 
     private void OnDisactivated()
     {
-        IsEnergyBarrier = false;
+        IsShield = false;
     }
 }
