@@ -3,16 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(PlayerShield))]
-[RequireComponent(typeof(PlayerArmor))]
-
-public class PlayerHealth : PlayerStats
+public class PlayerArmor : PlayerStats
 {
     private PlayerShield _playerShield;
-    private PlayerArmor _playerArmor;
-
-    public event UnityAction Dying;
-
     public bool IsShieldActive { get; private set; }
 
     private void OnValidate()
@@ -21,13 +14,16 @@ public class PlayerHealth : PlayerStats
         {
             MaxStats = 25;
         }
+        else if (MaxStats > 50)
+        {
+            MaxStats = 50;
+        }
     }
 
     private void Start()
     {
         CurrentStats = MaxStats;
         _playerShield = GetComponent<PlayerShield>();
-        _playerArmor = GetComponent<PlayerArmor>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,27 +31,28 @@ public class PlayerHealth : PlayerStats
         if (collision.TryGetComponent(out Meteor meteor))
         {
             if (_playerShield.IsShield == false)
-            {
-                int fullPercantage = 100;
-                int newDamag = meteor.Damage * (fullPercantage - _playerArmor.CurrentStats) / fullPercantage;
-                Change(-newDamag);
-
-                if (CurrentStats <= 0)
+            {   
+                if (CurrentStats > 0)
                 {
-                    Dying?.Invoke();
+                    Change(-meteor.Damage);
+
+                    if (CurrentStats < 0)
+                    {
+                        CurrentStats = 0;
+                    }
                 }
             }
         }
-        else if (collision.TryGetComponent(out Medicine medicine))
+        else if (collision.TryGetComponent(out Armor armore))
         {
-            if (CurrentStats + medicine.CountHealth > MaxStats)
+            if (CurrentStats + armore.Count > MaxStats)
             {
                 int newValueStats = MaxStats - CurrentStats;
                 Change(newValueStats);
             }
-            else if (CurrentStats + medicine.CountHealth <= MaxStats)
+            else if (CurrentStats + armore.Count <= MaxStats)
             {
-                Change(medicine.CountHealth);
+                Change(armore.Count);
             }
         }
     }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class Bar : MonoBehaviour
 {
-    [SerializeField] private PlayerHealth _player;
+    [SerializeField] private PlayerStats _player;
     [SerializeField] private Slider _bar;
     [SerializeField] private float _speedChange;
 
@@ -13,18 +13,18 @@ public class HealthBar : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.ChangeHealth += OnChangeHealth;
+        _player.ChangeStats += OnChangeHealth;
     }
 
     private void OnDisable()
     {
-        _player.ChangeHealth -= OnChangeHealth;
+        _player.ChangeStats -= OnChangeHealth;
     }
 
     private void Start()
     {
-        _bar.maxValue = _player.MaxHealth;
-        _bar.value = _player.MaxHealth;
+        _bar.maxValue = _player.MaxStats;
+        _bar.value = _player.MaxStats;
         _changeHealth = null;
     }
 
@@ -40,9 +40,9 @@ public class HealthBar : MonoBehaviour
 
     private IEnumerator ChangeHealth()
     {
-        while(_bar.value != _player.CurrentHealth)
+        while(_bar.value != _player.CurrentStats)
         {
-            _bar.value = Mathf.MoveTowards(_bar.value, _player.CurrentHealth, _speedChange * Time.deltaTime);
+            _bar.value = Mathf.MoveTowards(_bar.value, _player.CurrentStats, _speedChange * Time.deltaTime);
 
             yield return null;
         }
