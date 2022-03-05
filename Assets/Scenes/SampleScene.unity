@@ -841,13 +841,13 @@ MonoBehaviour:
   Container: {fileID: 920638326}
   _player: {fileID: 516733687}
   _templates:
-  - {fileID: 5614241820889140994, guid: 802c75d9b3300aa48a658d0116a2f7a0, type: 3}
-  - {fileID: 2182581149325872625, guid: 4b4fea8de6d246e439a887f47cfceb96, type: 3}
-  - {fileID: 8913456926058168828, guid: 97b9490654118224ab2d14c8fb37dc2b, type: 3}
   - {fileID: 5272385488790594081, guid: 27c2f088f2cca66459688100a8585e83, type: 3}
+  - {fileID: 2182581149325872625, guid: 4b4fea8de6d246e439a887f47cfceb96, type: 3}
+  - {fileID: 5614241820889140994, guid: 802c75d9b3300aa48a658d0116a2f7a0, type: 3}
+  - {fileID: 8913456926058168828, guid: 97b9490654118224ab2d14c8fb37dc2b, type: 3}
   _minSpawnPoint: -4.5
   _maxSpawnPoint: 3.44
-  _delay: 5
+  _delay: 7
 --- !u!1 &1020672966
 GameObject:
   m_ObjectHideFlags: 0
@@ -6952,5 +6952,10 @@ PrefabInstance:
       propertyPath: _disactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 8300000, guid: d0d9fb2861ed6304ab9b97417d6c3a57, type: 3}
+    - target: {fileID: 8556606886770664731, guid: 924948aae367d214a9b7bad5cf11274e,
+        type: 3}
+      propertyPath: _timeAction
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 924948aae367d214a9b7bad5cf11274e, type: 3}

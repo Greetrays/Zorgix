@@ -10,6 +10,7 @@ public abstract class TemporaryPlayerUpgrade : MonoBehaviour
     [SerializeField] private UnityEvent _disactivated;
 
     private float _elepsedTime;
+    private Coroutine _changeTime;
 
     public event UnityAction Activated
     {
@@ -26,7 +27,22 @@ public abstract class TemporaryPlayerUpgrade : MonoBehaviour
     public float ElepsedTime => _elepsedTime;
     public float TimeAction => _timeAction;
 
-    protected IEnumerator ChangeTime()
+    private void Start()
+    {
+        _changeTime = null;
+    }
+
+    protected void StartChangeTime()
+    {
+        if (_changeTime != null)
+        {
+            StopCoroutine(_changeTime);
+        }
+
+        _changeTime = StartCoroutine(ChangeTime());
+    }
+
+    private IEnumerator ChangeTime()
     {
         _elepsedTime = _timeAction;
         _activated?.Invoke();
@@ -37,6 +53,7 @@ public abstract class TemporaryPlayerUpgrade : MonoBehaviour
             yield return null;
         }
 
+        _changeTime = null;
         _disactivated?.Invoke();
     }
 }

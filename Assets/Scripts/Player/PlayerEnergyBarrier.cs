@@ -21,7 +21,7 @@ public class PlayerEnergyBarrier : TemporaryPlayerUpgrade
     {
         if (collision.TryGetComponent(out EnergyBarrier shield))
         {
-            StartCoroutine(ChangeTime());
+            StartChangeTime();
             IsEnergyBarrier = true;
         }
     }

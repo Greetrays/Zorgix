@@ -10,11 +10,13 @@ public class BuffPanel : MonoBehaviour
     [SerializeField] private TemporaryPlayerUpgrade _player;
 
     private Image _panel;
+    private Coroutine _changeAmountFilled;
 
     private void OnEnable()
     {
         _player.Activated += OnActivated;
         _panel = GetComponent<Image>();
+        _changeAmountFilled = null;
     }
 
     private void OnDisable()
@@ -29,7 +31,12 @@ public class BuffPanel : MonoBehaviour
 
     private void OnActivated()
     {
-        StartCoroutine(ChangeAmountFilled());
+        if (_changeAmountFilled != null)
+        {
+            StopCoroutine(_changeAmountFilled);          
+        }
+
+        _changeAmountFilled = StartCoroutine(ChangeAmountFilled());
     }
 
     private IEnumerator ChangeAmountFilled()
@@ -41,5 +48,7 @@ public class BuffPanel : MonoBehaviour
             _panel.fillAmount = _player.ElepsedTime / _player.TimeAction;
             yield return null;
         }
+
+        _changeAmountFilled = null;
     }
 }
