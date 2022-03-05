@@ -6034,7 +6034,7 @@ MonoBehaviour:
   _minSpawnPoint: -4.5
   _maxSpawnPoint: 3.44
   _nextWaveButton: {fileID: 1118490423}
-  _capacityPool: 30
+  _capacityPool: 50
   _waves:
   - _templates:
     - {fileID: 7219348428229010402, guid: 9c2bc56855b52664ba0081758f3f5c63, type: 3}

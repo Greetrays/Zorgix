@@ -5,13 +5,20 @@ using UnityEngine;
 public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private float _speedMove;
-    [SerializeField] private float _minDistanceX;
+
     [SerializeField] private float _maxDistanceX;
     [SerializeField] private float _minDistanceY;
     [SerializeField] private float _maxDistanceY;
 
     private Vector3 newTargetPosition;
     private Vector3 oldPosition;
+    private float _minDistanceX;
+
+    private void Start()
+    {
+        float wigthSprite = gameObject.GetComponent<Renderer>().bounds.size.x;
+        _minDistanceX = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + wigthSprite / 2;
+    }
 
     private void Update()
     {
