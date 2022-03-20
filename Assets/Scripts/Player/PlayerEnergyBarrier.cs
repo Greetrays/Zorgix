@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class PlayerEnergyBarrier : TemporaryPlayerUpgrade
 {
+    [SerializeField] private ParticleSystem _barrierParticles;
     public bool IsEnergyBarrier { get; private set; }
 
     private void OnEnable()
@@ -21,6 +22,7 @@ public class PlayerEnergyBarrier : TemporaryPlayerUpgrade
     {
         if (collision.TryGetComponent(out EnergyBarrier shield))
         {
+            _barrierParticles.Play();
             StartChangeTime();
             IsEnergyBarrier = true;
         }
@@ -29,5 +31,6 @@ public class PlayerEnergyBarrier : TemporaryPlayerUpgrade
     private void OnDisactivated()
     {
         IsEnergyBarrier = false;
+        _barrierParticles.Stop();
     }
 }
