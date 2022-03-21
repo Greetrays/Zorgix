@@ -8,6 +8,7 @@ public abstract class TemporaryPlayerUpgrade : MonoBehaviour
     [SerializeField] private float _timeAction;
     [SerializeField] private UnityEvent _activated;
     [SerializeField] private UnityEvent _disactivated;
+    [SerializeField] private ParticleSystem _particle;
 
     private float _elepsedTime;
     private Coroutine _changeTime;
@@ -45,6 +46,7 @@ public abstract class TemporaryPlayerUpgrade : MonoBehaviour
     private IEnumerator ChangeTime()
     {
         _elepsedTime = _timeAction;
+        _particle.Play();
         _activated?.Invoke();
 
         while (_elepsedTime > 0)
@@ -54,6 +56,7 @@ public abstract class TemporaryPlayerUpgrade : MonoBehaviour
         }
 
         _changeTime = null;
+        _particle.Stop();
         _disactivated?.Invoke();
     }
 }
