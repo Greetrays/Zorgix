@@ -8,6 +8,7 @@ public abstract class PlayerStats : MonoBehaviour
     [SerializeField] private UnityEvent _decreasing;
     [SerializeField] private UnityEvent _refilling;
     [SerializeField] private int _maxStats;
+    [SerializeField] private ParticleSystem _particle;
 
     public int CurrentStats { get; protected set; }
 
@@ -35,8 +36,13 @@ public abstract class PlayerStats : MonoBehaviour
     private void CheckValue(int value)
     {
         if (value >= 0)
+        {
             _refilling?.Invoke();
+            _particle.Play();
+        }
         else
+        {
             _decreasing?.Invoke();
+        }
     }
 }
