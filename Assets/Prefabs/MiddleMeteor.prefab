@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 5
+  _fragments: {fileID: 4756348834884870488, guid: 275bf82422bc9544593fabeb699f35b2,
+    type: 3}
 --- !u!114 &8698963343957509899
 MonoBehaviour:
   m_ObjectHideFlags: 0
