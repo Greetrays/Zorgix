@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2208345471846563038}
   - component: {fileID: 2208345471846563041}
   m_Layer: 9
-  m_Name: Barrier
+  m_Name: BarrierParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
