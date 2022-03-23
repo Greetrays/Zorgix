@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class ObjectSpawner : Pool
 {
-    [SerializeField] private List<GameObject> _templates;
     [SerializeField] private float _minSpawnPoint;
     [SerializeField] private float _maxSpawnPoint;
-    [SerializeField] private float _delay;
 
+    private float _delay;
     private float _elepsedTime;
-
-    private void Start()
-    {
-        Init(_templates);
-    }
 
     private void Update()
     {
@@ -30,6 +24,12 @@ public class ObjectSpawner : Pool
             DisableObject();
             _elepsedTime = 0;
         }
+    }
+
+    public void InitSpawner(List<GameObject> templates, float delay)
+    {
+        Init(templates);
+        _delay = delay;
     }
 
     private float GenerateChance()

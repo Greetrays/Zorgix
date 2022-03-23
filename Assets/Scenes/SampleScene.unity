@@ -484,7 +484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0.14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -981,14 +981,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Container: {fileID: 920638326}
   _player: {fileID: 516733687}
-  _templates:
-  - {fileID: 5272385488790594081, guid: 27c2f088f2cca66459688100a8585e83, type: 3}
-  - {fileID: 2182581149325872625, guid: 4b4fea8de6d246e439a887f47cfceb96, type: 3}
-  - {fileID: 5614241820889140994, guid: 802c75d9b3300aa48a658d0116a2f7a0, type: 3}
-  - {fileID: 8913456926058168828, guid: 97b9490654118224ab2d14c8fb37dc2b, type: 3}
   _minSpawnPoint: -4.5
   _maxSpawnPoint: 3.44
-  _delay: 2
 --- !u!1 &1020672966
 GameObject:
   m_ObjectHideFlags: 0
@@ -10942,29 +10936,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Container: {fileID: 1584630736}
   _player: {fileID: 516733687}
-  _delay: 0.2
   _minSpawnPoint: -4.5
   _maxSpawnPoint: 3.44
   _nextWaveButton: {fileID: 1118490423}
   _capacityPool: 50
+  _objectSpawner: {fileID: 920638327}
   _waves:
-  - _templates:
+  - _templatesEnemys:
     - {fileID: 1293785672839638407, guid: bf3001991d16d8c47921c1bf007a6f10, type: 3}
-    _duration: 60
+    _templatesUpgradeObjects:
+    - {fileID: 5614241820889140994, guid: 802c75d9b3300aa48a658d0116a2f7a0, type: 3}
+    _duration: 5
+    _delayBetweenSpawnUpgradeObjects: 2
+    _delayBetweenSpawnEnemy: 0.2
     _sound: {fileID: 8300000, guid: 2a42e54fca729bf4aa24d0b75d8a72b3, type: 3}
-  - _templates:
+  - _templatesEnemys:
     - {fileID: 8698963343957509898, guid: 0d3af3406376d6f42ac4e5ad1b32f716, type: 3}
-    _duration: 60
+    _templatesUpgradeObjects:
+    - {fileID: 5272385488790594081, guid: 27c2f088f2cca66459688100a8585e83, type: 3}
+    _duration: 5
+    _delayBetweenSpawnUpgradeObjects: 3
+    _delayBetweenSpawnEnemy: 0.2
     _sound: {fileID: 8300000, guid: 2a42e54fca729bf4aa24d0b75d8a72b3, type: 3}
-  - _templates:
+  - _templatesEnemys:
     - {fileID: 7219348428229010402, guid: 9c2bc56855b52664ba0081758f3f5c63, type: 3}
-    _duration: 60
+    _templatesUpgradeObjects:
+    - {fileID: 8913456926058168828, guid: 97b9490654118224ab2d14c8fb37dc2b, type: 3}
+    _duration: 5
+    _delayBetweenSpawnUpgradeObjects: 2
+    _delayBetweenSpawnEnemy: 0.5
     _sound: {fileID: 8300000, guid: 2a42e54fca729bf4aa24d0b75d8a72b3, type: 3}
-  - _templates:
+  - _templatesEnemys:
+    - {fileID: 7219348428229010402, guid: 9c2bc56855b52664ba0081758f3f5c63, type: 3}
+    - {fileID: 8698963343957509898, guid: 0d3af3406376d6f42ac4e5ad1b32f716, type: 3}
     - {fileID: 1293785672839638407, guid: bf3001991d16d8c47921c1bf007a6f10, type: 3}
-    - {fileID: 8698963343957509898, guid: 0d3af3406376d6f42ac4e5ad1b32f716, type: 3}
-    - {fileID: 7219348428229010402, guid: 9c2bc56855b52664ba0081758f3f5c63, type: 3}
-    _duration: 60
+    _templatesUpgradeObjects:
+    - {fileID: 2182581149325872625, guid: 4b4fea8de6d246e439a887f47cfceb96, type: 3}
+    _duration: 5
+    _delayBetweenSpawnUpgradeObjects: 2
+    _delayBetweenSpawnEnemy: 0.2
     _sound: {fileID: 8300000, guid: 2a42e54fca729bf4aa24d0b75d8a72b3, type: 3}
 --- !u!4 &1584630736
 Transform:
@@ -11535,11 +11545,8 @@ MonoBehaviour:
   Container: {fileID: 5614241820889140999, guid: 802c75d9b3300aa48a658d0116a2f7a0,
     type: 3}
   _player: {fileID: 516733687}
-  _templates:
-  - {fileID: 5272385488790594081, guid: 27c2f088f2cca66459688100a8585e83, type: 3}
   _minSpawnPoint: -4.5
   _maxSpawnPoint: 3.44
-  _delay: 2
 --- !u!4 &2004678940
 Transform:
   m_ObjectHideFlags: 0
@@ -11842,7 +11849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3666792590952372, guid: 924948aae367d214a9b7bad5cf11274e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.01
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 974889551856521702, guid: 924948aae367d214a9b7bad5cf11274e,
         type: 3}

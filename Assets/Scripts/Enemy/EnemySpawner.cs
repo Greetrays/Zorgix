@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class EnemySpawner : Pool
 {
     [Header("Спаунер")]
-    [SerializeField] private float _delay;
     [SerializeField] private float _minSpawnPoint;
     [SerializeField] private float _maxSpawnPoint;
     [SerializeField] private Button _nextWaveButton;
     [SerializeField] private int _capacityPool;
+    [SerializeField] private ObjectSpawner _objectSpawner;
 
     private List<GameObject> _templates;
     private float _elapsedTimeSpawn;
+    private float _delay;
 
     [Header("Волны")]
     [SerializeField] private List<Wave> _waves;
@@ -30,8 +31,10 @@ public class EnemySpawner : Pool
     private void Start()
     {
         SetWave(_currentNumberWave);
-        _templates = _currentWave.Templates;
+        _templates = _currentWave.TemplatesEnemys;
         Init(_templates, _capacityPool);
+        _objectSpawner.InitSpawner(_currentWave.TemplatesUpgradeObjects, _currentWave.DelayBetweenSpawnUpgradeObjects);
+        _delay = _currentWave.DelayBetweenSpawnEnemy;
     }
 
     private void Update()
@@ -65,8 +68,9 @@ public class EnemySpawner : Pool
         _elapsedWaveTime = 0;
         _nextWaveButton.gameObject.SetActive(false);
         SetWave(++_currentNumberWave);
-        _templates = _currentWave.Templates;
-        Init(_templates, _capacityPool);      
+        _templates = _currentWave.TemplatesEnemys;
+        Init(_templates, _capacityPool);
+        _objectSpawner.InitSpawner(_currentWave.TemplatesUpgradeObjects, _currentWave.DelayBetweenSpawnUpgradeObjects);
     }
 
     private void Spawn(GameObject obj)
@@ -86,11 +90,17 @@ public class EnemySpawner : Pool
     [System.Serializable]
     public class Wave
     {
-        [SerializeField] private List<GameObject> _templates;
+        [SerializeField] private List<GameObject> _templatesEnemys;
+        [SerializeField] private List<GameObject> _templatesUpgradeObjects;
         [SerializeField] private float _duration;
+        [SerializeField] private float _delayBetweenSpawnUpgradeObjects;
+        [SerializeField] private float _delayBetweenSpawnEnemy;
         [SerializeField] private AudioClip _sound;
 
         public float Duration => _duration;
-        public List<GameObject> Templates => _templates;
+        public List<GameObject> TemplatesEnemys => _templatesEnemys;
+        public List<GameObject> TemplatesUpgradeObjects => _templatesUpgradeObjects;
+        public float DelayBetweenSpawnUpgradeObjects => _delayBetweenSpawnUpgradeObjects;
+        public float DelayBetweenSpawnEnemy => _delayBetweenSpawnEnemy;
     }
 }
