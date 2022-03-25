@@ -47,6 +47,23 @@ public abstract class Pool : MonoBehaviour
         return gameObj != null;
     }
 
+    protected void TryDestroyObjects()
+    {
+        Vector3 disableMaxPoint = Camera.main.ViewportToWorldPoint(new Vector2(1.1f, 0));
+        Vector3 disableMinPoint = Camera.main.ViewportToWorldPoint(new Vector2(-0.2f, 0));
+
+        if (transform.childCount > 0)
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                if (transform.GetChild(i).transform.position.x >= disableMaxPoint.x || transform.GetChild(i).transform.position.x <= disableMinPoint.x || transform.GetChild(i).gameObject.activeSelf == false)
+                {
+                    Destroy(transform.GetChild(i).gameObject);
+                }
+            }
+        }
+    }
+
     protected bool TryGetRandomObject(out GameObject gameObj)
     {
         int randomIndex = Random.Range(0, _pool.Count);
@@ -65,7 +82,7 @@ public abstract class Pool : MonoBehaviour
 
     protected void DisableObject()
     {
-        Vector3 disablePoint = Camera.main.ViewportToWorldPoint(new Vector2 (-0.5f, 0));
+        Vector3 disablePoint = Camera.main.ViewportToWorldPoint(new Vector2 (-0.2f, 0));
 
         foreach (var item in _pool)
         {

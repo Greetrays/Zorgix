@@ -28,6 +28,7 @@ public class ObjectSpawner : Pool
 
     public void InitSpawner(List<GameObject> templates, float delay)
     {
+        TryDestroyObjects();
         Init(templates);
         _delay = delay;
     }

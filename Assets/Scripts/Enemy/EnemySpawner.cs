@@ -65,11 +65,13 @@ public class EnemySpawner : Pool
 
     private void TryStartNextWave()
     {
+        TryDestroyObjects();
         _elapsedWaveTime = 0;
         _nextWaveButton.gameObject.SetActive(false);
         SetWave(++_currentNumberWave);
         _templates = _currentWave.TemplatesEnemys;
         Init(_templates, _capacityPool);
+        _delay = _currentWave.DelayBetweenSpawnEnemy;
         _objectSpawner.InitSpawner(_currentWave.TemplatesUpgradeObjects, _currentWave.DelayBetweenSpawnUpgradeObjects);
     }
 
