@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1671046753303494500}
   - component: {fileID: 4504846171599688356}
   m_Layer: 8
-  m_Name: Shield 1
+  m_Name: EnergyBarrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
