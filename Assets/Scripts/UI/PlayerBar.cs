@@ -3,42 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Bar : MonoBehaviour
+public class PlayerBar : MonoBehaviour
 {
     [SerializeField] private PlayerStats _player;
     [SerializeField] private Slider _bar;
     [SerializeField] private float _speedChange;
 
-    private Coroutine _changeHealth;
+    private Coroutine _change;
 
     private void OnEnable()
     {
-        _player.ChangeStats += OnChangeHealth;
+        _player.ChangeStats += OnChange;
     }
 
     private void OnDisable()
     {
-        _player.ChangeStats -= OnChangeHealth;
+        _player.ChangeStats -= OnChange;
     }
 
     private void Start()
     {
         _bar.maxValue = _player.MaxStats;
         _bar.value = _player.MaxStats;
-        _changeHealth = null;
+        _change = null;
     }
 
-    private void OnChangeHealth()
+    private void OnChange()
     {
-        if (_changeHealth != null)
+        if (_change != null)
         {
-            StopCoroutine(_changeHealth);
+            StopCoroutine(_change);
         }
 
-        _changeHealth = StartCoroutine(ChangeHealth());
+        _change = StartCoroutine(Change());
     }
 
-    private IEnumerator ChangeHealth()
+    private IEnumerator Change()
     {
         while(_bar.value != _player.CurrentStats)
         {
@@ -47,6 +47,6 @@ public class Bar : MonoBehaviour
             yield return null;
         }
 
-        _changeHealth = null;
+        _change = null;
     }
 }
