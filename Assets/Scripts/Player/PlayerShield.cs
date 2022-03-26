@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerShield : TemporaryPlayerUpgrade
 {
+    [SerializeField] private GameObject _shieldSprite;
     public bool IsShield { get; private set; }
 
     private void OnEnable()
@@ -21,12 +22,14 @@ public class PlayerShield : TemporaryPlayerUpgrade
         if (collision.TryGetComponent(out Shield shield))
         {
             StartChangeTime();
+            _shieldSprite.SetActive(true);
             IsShield = true;
         }
     }
 
     private void OnDisactivated()
     {
+        _shieldSprite.SetActive(false);
         IsShield = false;
     }
 }
