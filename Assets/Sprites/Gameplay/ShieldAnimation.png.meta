@@ -1,0 +1,773 @@
+fileFormatVersion: 2
+guid: d3199a127657b7f40b80b4399e9a5898
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6717884257390833292
+    second: Shield_0
+  - first:
+      213: -7947067082740497745
+    second: Shield_1
+  - first:
+      213: -4098029715399502762
+    second: Shield_2
+  - first:
+      213: -407368442477547055
+    second: Shield_3
+  - first:
+      213: -8418880130915447063
+    second: Shield_4
+  - first:
+      213: -7904321528907490436
+    second: Shield_5
+  - first:
+      213: 2341536110440916619
+    second: Shield_6
+  - first:
+      213: 4637961900233290276
+    second: Shield_7
+  - first:
+      213: -8791351738350567763
+    second: Shield_8
+  - first:
+      213: 4178837475672097676
+    second: Shield_9
+  - first:
+      213: -4139967499187289690
+    second: Shield_10
+  - first:
+      213: -1724066967173290298
+    second: Shield_11
+  - first:
+      213: 2593205199409498848
+    second: Shield_12
+  - first:
+      213: -5621012540882060733
+    second: Shield_13
+  - first:
+      213: -3116242569157118883
+    second: Shield_14
+  - first:
+      213: 612823546732255015
+    second: Shield_15
+  - first:
+      213: 5529015764518027307
+    second: Shield_16
+  - first:
+      213: 7117384378876116084
+    second: Shield_17
+  - first:
+      213: -4921259342409278095
+    second: Shield_18
+  - first:
+      213: 6341517827957361620
+    second: Shield_19
+  - first:
+      213: 6245830438149059186
+    second: Shield_20
+  - first:
+      213: 7546075876720601745
+    second: Shield_21
+  - first:
+      213: -1052069229693800646
+    second: Shield_22
+  - first:
+      213: 6381559947035851302
+    second: Shield_23
+  - first:
+      213: 5325189672063782776
+    second: Shield_24
+  - first:
+      213: 7672910636318473952
+    second: Shield_25
+  - first:
+      213: -4039519424374130496
+    second: Shield_26
+  - first:
+      213: -2534685989245856344
+    second: Shield_27
+  - first:
+      213: 2814747734217260628
+    second: Shield_28
+  - first:
+      213: -891032645926009243
+    second: Shield_29
+  - first:
+      213: -5443933442421158190
+    second: Shield_30
+  - first:
+      213: -4904233506061657768
+    second: Shield_31
+  - first:
+      213: -8540623953450902946
+    second: Shield_32
+  - first:
+      213: -8046847363665507399
+    second: Shield_33
+  - first:
+      213: -5257168947442879873
+    second: Shield_34
+  - first:
+      213: -5994575193740574529
+    second: Shield_35
+  - first:
+      213: -1232605599224602989
+    second: Shield_36
+  - first:
+      213: -872444175396510644
+    second: Shield_37
+  - first:
+      213: -6158263351642659031
+    second: Shield_38
+  - first:
+      213: -6809286561004986876
+    second: Shield_39
+  - first:
+      213: -2289293709603572260
+    second: Shield_40
+  - first:
+      213: 4879859909826366259
+    second: Shield_41
+  - first:
+      213: 4905990322448221321
+    second: Shield_42
+  - first:
+      213: -3326499553418218096
+    second: Shield_43
+  - first:
+      213: 633810729944328288
+    second: Shield_44
+  - first:
+      213: 3928337437978702749
+    second: Shield_45
+  - first:
+      213: 3345319846246722012
+    second: Shield_46
+  - first:
+      213: 5313545454324558268
+    second: Shield_47
+  - first:
+      213: -4779042445489365050
+    second: Shield_48
+  - first:
+      213: 7619172280979187138
+    second: Shield_49
+  - first:
+      213: 3512024255439418788
+    second: Shield_50
+  - first:
+      213: 7211666528836901995
+    second: Shield_51
+  - first:
+      213: 6520001761850261341
+    second: Shield_52
+  - first:
+      213: -7250254137406125008
+    second: Shield_53
+  - first:
+      213: -4124856463101904424
+    second: Shield_54
+  - first:
+      213: -8179271366097660905
+    second: Shield_55
+  - first:
+      213: -6866017662687910202
+    second: Shield_56
+  - first:
+      213: 584887738258368778
+    second: Shield_57
+  - first:
+      213: 8545383463085397584
+    second: Shield_58
+  - first:
+      213: 8297701256106286097
+    second: Shield_59
+  - first:
+      213: -7485647790512267979
+    second: Shield_60
+  - first:
+      213: 6023621190871946740
+    second: Shield_61
+  - first:
+      213: -1150206381136627159
+    second: Shield_62
+  - first:
+      213: 3293856190464695989
+    second: Shield_63
+  - first:
+      213: 7701907588509263401
+    second: Shield_64
+  - first:
+      213: 1324938523696817623
+    second: Shield_65
+  - first:
+      213: -787164867312498777
+    second: Shield_66
+  - first:
+      213: 7842425297626193172
+    second: Shield_67
+  - first:
+      213: -6374824381116900861
+    second: Shield_68
+  - first:
+      213: -9069650779175755129
+    second: Shield_69
+  - first:
+      213: -303437568225533108
+    second: Shield_70
+  - first:
+      213: 5066065156325330587
+    second: Shield_71
+  - first:
+      213: -2948166222502421815
+    second: Shield_72
+  - first:
+      213: -1275063397548476739
+    second: Shield_73
+  - first:
+      213: 6941346765195496578
+    second: Shield_74
+  - first:
+      213: -2367147628460225742
+    second: Shield_75
+  - first:
+      213: -7158012206134834201
+    second: Shield_76
+  - first:
+      213: 6444757245434150397
+    second: Shield_77
+  - first:
+      213: 3563349419773631306
+    second: Shield_78
+  - first:
+      213: -4266434423206236835
+    second: Shield_79
+  - first:
+      213: -3601405031355941860
+    second: Shield_80
+  - first:
+      213: 4999250098665603477
+    second: Shield_81
+  - first:
+      213: -1092837003172294028
+    second: Shield_82
+  - first:
+      213: -1416156473676217876
+    second: Shield_83
+  - first:
+      213: -2854136983575392272
+    second: Shield_84
+  - first:
+      213: -3654928420246371110
+    second: Shield_85
+  - first:
+      213: 6787436961827190761
+    second: Shield_86
+  - first:
+      213: 5584258708140529020
+    second: Shield_87
+  - first:
+      213: -3444252780226854856
+    second: Shield_88
+  - first:
+      213: -5978512162594382490
+    second: Shield_89
+  - first:
+      213: -6413286570277425013
+    second: Shield_90
+  - first:
+      213: -162684718997404464
+    second: Shield_91
+  - first:
+      213: 4284257949260128193
+    second: Shield_92
+  - first:
+      213: -8831052689407875903
+    second: Shield_93
+  - first:
+      213: 8562869229696201848
+    second: Shield_94
+  - first:
+      213: -236377800892430479
+    second: Shield_95
+  - first:
+      213: -8569318594796299161
+    second: Shield_96
+  - first:
+      213: -5865569692550355148
+    second: Shield_97
+  - first:
+      213: 7601858806765471816
+    second: Shield_98
+  - first:
+      213: -5211228636776205697
+    second: Shield_99
+  - first:
+      213: -5999035518893872476
+    second: Shield_100
+  - first:
+      213: -1769507145577849231
+    second: Shield_101
+  - first:
+      213: -2310510751342704044
+    second: Shield_102
+  - first:
+      213: 1299690173672272823
+    second: Shield_103
+  - first:
+      213: -1395560575621903263
+    second: Shield_104
+  - first:
+      213: 8625113751716576167
+    second: Shield_105
+  - first:
+      213: -4370218506043388880
+    second: Shield_106
+  - first:
+      213: 1788370107121739400
+    second: Shield_107
+  - first:
+      213: -8279336049421027194
+    second: Shield_108
+  - first:
+      213: 7500294944868378438
+    second: Shield_109
+  - first:
+      213: 1490174355041944785
+    second: Shield_110
+  - first:
+      213: 798673718675277074
+    second: Shield_111
+  - first:
+      213: 874574813673695421
+    second: Shield_112
+  - first:
+      213: -647397593907191532
+    second: Shield_113
+  - first:
+      213: 6606815571472207063
+    second: Shield_114
+  - first:
+      213: -2912140298868524478
+    second: Shield_115
+  - first:
+      213: 2665715093465955362
+    second: Shield_116
+  - first:
+      213: -8961635542943850297
+    second: Shield_117
+  - first:
+      213: 431052304638153442
+    second: Shield_118
+  - first:
+      213: 852652786148097286
+    second: Shield_119
+  - first:
+      213: 7785432859466473734
+    second: Shield_120
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shield_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471d70c5cd745c2a0800000000000000
+      internalID: -6717884257390833292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa28d07f79856b190800000000000000
+      internalID: -7947067082740497745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6541e96afafd027c0800000000000000
+      internalID: -4098029715399502762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_3
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1fb655f8cb85af0800000000000000
+      internalID: -407368442477547055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_4
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eec03640212a2b80800000000000000
+      internalID: -8418880130915447063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_5
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b1ff6c2753e4290800000000000000
+      internalID: -7904321528907490436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_6
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86a49bbfaece7020800000000000000
+      internalID: 2341536110440916619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_7
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422733976c95d5040800000000000000
+      internalID: 4637961900233290276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_8
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daef91c2c28def580800000000000000
+      internalID: -8791351738350567763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_9
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c83868f2b863ef930800000000000000
+      internalID: 4178837475672097676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_10
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a187457e71eb86c0800000000000000
+      internalID: -4139967499187289690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_11
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6a6a45a32e218e0800000000000000
+      internalID: -1724066967173290298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_12
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eacf74b36aecf320800000000000000
+      internalID: 2593205199409498848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield_13
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a75be10e62ef1b0800000000000000
+      internalID: -5621012540882060733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
