@@ -28,22 +28,7 @@ public class PlayerArmor : PlayerStats
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out Meteor meteor))
-        {
-            if (_playerShield.IsShield == false)
-            {   
-                if (CurrentStats > 0)
-                {
-                    Change(-meteor.Damage);
-
-                    if (CurrentStats < 0)
-                    {
-                        CurrentStats = 0;
-                    }
-                }
-            }
-        }
-        else if (collision.TryGetComponent(out Armor armore))
+        if (collision.TryGetComponent(out Armor armore))
         {
             if (CurrentStats + armore.Count > MaxStats)
             {
@@ -53,6 +38,22 @@ public class PlayerArmor : PlayerStats
             else if (CurrentStats + armore.Count <= MaxStats)
             {
                 Change(armore.Count);
+            }
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (_playerShield.IsShield == false)
+        {
+            if (CurrentStats > 0)
+            {
+                Change(-damage);
+
+                if (CurrentStats < 0)
+                {
+                    CurrentStats = 0;
+                }
             }
         }
     }

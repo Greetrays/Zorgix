@@ -11,10 +11,16 @@ public class Meteor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerHealth player))
+        if (collision.TryGetComponent(out PlayerHealth playerHealth))
         {
             gameObject.SetActive(false);
+            playerHealth.TakeDamage(_damage);
             Instantiate(_fragments, transform.position, Quaternion.identity);
+
+            if (collision.TryGetComponent(out PlayerArmor playerArmor))
+            {
+                playerArmor.TakeDamage(_damage);
+            }
         }
     }
 }

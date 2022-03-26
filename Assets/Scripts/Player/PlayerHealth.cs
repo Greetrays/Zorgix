@@ -32,21 +32,7 @@ public class PlayerHealth : PlayerStats
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out Meteor meteor))
-        {
-            if (_playerShield.IsShield == false)
-            {
-                int fullPercantage = 100;
-                int newDamag = meteor.Damage * (fullPercantage - _playerArmor.CurrentStats) / fullPercantage;
-                Change(-newDamag);
-
-                if (CurrentStats <= 0)
-                {
-                    Dying?.Invoke();
-                }
-            }
-        }
-        else if (collision.TryGetComponent(out Medicine medicine))
+        if (collision.TryGetComponent(out Medicine medicine))
         {
             if (CurrentStats + medicine.CountHealth > MaxStats)
             {
@@ -56,6 +42,21 @@ public class PlayerHealth : PlayerStats
             else if (CurrentStats + medicine.CountHealth <= MaxStats)
             {
                 Change(medicine.CountHealth);
+            }
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (_playerShield.IsShield == false)
+        {
+            int fullPercantage = 100;
+            int newDamag = damage * (fullPercantage - _playerArmor.CurrentStats) / fullPercantage;
+            Change(-newDamag);
+
+            if (CurrentStats <= 0)
+            {
+                Dying?.Invoke();
             }
         }
     }

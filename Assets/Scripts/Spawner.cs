@@ -1,40 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class EnemySpawner : Pool
+public class Spawner : Pool
 {
     [Header("Спаунер")]
     [SerializeField] private float _minSpawnPoint;
     [SerializeField] private float _maxSpawnPoint;
-    [SerializeField] private Button _nextWaveButton;
-    [SerializeField] private int _capacityPool;
     [SerializeField] private ObjectSpawner _objectSpawner;
 
-    private List<GameObject> _templates;
+    private List<SpawnObject> _templates;
     private float _elapsedTimeSpawn;
     private float _delay;
 
     [Header("Волны")]
+    [SerializeField] private float _delayBeforeStartWave;
+    [SerializeField] private Text _newWaveText;
     [SerializeField] private List<Wave> _waves;
 
+    private float _elepsedTimeBeforStartWave;
     private float _elapsedWaveTime;
     private Wave _currentWave;
     private int _currentNumberWave;
 
-    private void OnEnable()
-    {
-        _nextWaveButton.onClick.AddListener(TryStartNextWave);
-    }
+    public event UnityAction<float> LaunchingNewWave;
 
     private void Start()
     {
         SetWave(_currentNumberWave);
         _templates = _currentWave.TemplatesEnemys;
-        Init(_templates, _capacityPool);
+        Init(_templates);
         _objectSpawner.InitSpawner(_currentWave.TemplatesUpgradeObjects, _currentWave.DelayBetweenSpawnUpgradeObjects);
         _delay = _currentWave.DelayBetweenSpawnEnemy;
+        LaunchingNewWave?.Invoke(_currentWave.Duration);
     }
 
     private void Update()
@@ -58,21 +58,38 @@ public class EnemySpawner : Pool
         {
             if (_waves.Count > _currentNumberWave + 1)
             {
-               _nextWaveButton.gameObject.SetActive(true);
+                _elepsedTimeBeforStartWave += Time.deltaTime;
+
+                if (_newWaveText.gameObject.activeSelf == false)
+                {
+                    _newWaveText.gameObject.SetActive(true);
+                }
+
+                if (_elepsedTimeBeforStartWave >= _delayBeforeStartWave)
+                {
+                    StartNextWave();
+                    _elepsedTimeBeforStartWave = 0;
+                    _newWaveText.gameObject.SetActive(false);
+                }
             }
         }
     }
 
-    private void TryStartNextWave()
+    public void NextWaveDevelopButton()
+    {
+        StartNextWave();
+    }
+
+    private void StartNextWave()
     {
         TryDestroyObjects();
         _elapsedWaveTime = 0;
-        _nextWaveButton.gameObject.SetActive(false);
         SetWave(++_currentNumberWave);
         _templates = _currentWave.TemplatesEnemys;
-        Init(_templates, _capacityPool);
+        Init(_templates);
         _delay = _currentWave.DelayBetweenSpawnEnemy;
         _objectSpawner.InitSpawner(_currentWave.TemplatesUpgradeObjects, _currentWave.DelayBetweenSpawnUpgradeObjects);
+        LaunchingNewWave?.Invoke(_currentWave.Duration);
     }
 
     private void Spawn(GameObject obj)
@@ -92,16 +109,15 @@ public class EnemySpawner : Pool
     [System.Serializable]
     public class Wave
     {
-        [SerializeField] private List<GameObject> _templatesEnemys;
-        [SerializeField] private List<GameObject> _templatesUpgradeObjects;
+        [SerializeField] private List<SpawnObject> _templatesEnemys;
+        [SerializeField] private List<SpawnObject> _templatesUpgradeObjects;
         [SerializeField] private float _duration;
         [SerializeField] private float _delayBetweenSpawnUpgradeObjects;
         [SerializeField] private float _delayBetweenSpawnEnemy;
-        [SerializeField] private AudioClip _sound;
 
         public float Duration => _duration;
-        public List<GameObject> TemplatesEnemys => _templatesEnemys;
-        public List<GameObject> TemplatesUpgradeObjects => _templatesUpgradeObjects;
+        public List<SpawnObject> TemplatesEnemys => _templatesEnemys;
+        public List<SpawnObject> TemplatesUpgradeObjects => _templatesUpgradeObjects;
         public float DelayBetweenSpawnUpgradeObjects => _delayBetweenSpawnUpgradeObjects;
         public float DelayBetweenSpawnEnemy => _delayBetweenSpawnEnemy;
     }
