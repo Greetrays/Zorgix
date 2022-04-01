@@ -59,6 +59,12 @@ public abstract class Pool : MonoBehaviour
 
     protected bool TryGetRandomObject(out GameObject gameObj)
     {
+        if (_pool.Count <= 0)
+        {
+            gameObj = null;
+            return false;
+        }
+
         int randomIndex = Random.Range(0, _pool.Count);
 
         if (_pool[randomIndex].activeSelf == false)

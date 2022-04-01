@@ -130,6 +130,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  _startDirection: {x: -1, y: 0, z: 0}
 --- !u!50 &1671046753303494500
 Rigidbody2D:
   serializedVersion: 4

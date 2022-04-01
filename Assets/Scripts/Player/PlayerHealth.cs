@@ -51,8 +51,17 @@ public class PlayerHealth : PlayerStats
         if (_playerShield.IsShield == false)
         {
             int fullPercantage = 100;
-            int newDamag = damage * (fullPercantage - _playerArmor.CurrentStats) / fullPercantage;
-            Change(-newDamag);
+            int newDamage = damage * (fullPercantage - _playerArmor.CurrentStats) / fullPercantage;
+
+            if (CurrentStats - newDamage > 0)
+            {
+                Change(-newDamage);
+            }
+            else
+            {
+                newDamage = CurrentStats;
+                Change(-newDamage);
+            }
 
             if (CurrentStats <= 0)
             {

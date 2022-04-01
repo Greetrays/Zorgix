@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3243296883715393789}
   - component: {fileID: 3238912808016086127}
   - component: {fileID: 7869864668839291771}
-  - component: {fileID: -245688507759580750}
   m_Layer: 8
   m_Name: BigMeteor
   m_TagString: Untagged
@@ -131,6 +130,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  _startDirection: {x: -1, y: 0, z: 0}
 --- !u!95 &3243296883715393789
 Animator:
   serializedVersion: 3
@@ -187,15 +187,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-245688507759580750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7219348428229010402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b4dc2c1cd47d924db639c174ee18be1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

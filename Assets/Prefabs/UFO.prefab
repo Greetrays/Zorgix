@@ -179,7 +179,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1561701816989816664}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80cb7249ad6df0a40abefe435db9afbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f8fc9f76cc36ae488892dbe5e2ae2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions: []
@@ -238,7 +238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 1466565094}
-  _damage: 30
   _particle: {fileID: 0}
 --- !u!114 &1466565098
 MonoBehaviour:
@@ -280,6 +279,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1561701816989816664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b4dc2c1cd47d924db639c174ee18be1, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e90fd92b271a2a458b2ce63e95d2264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 0

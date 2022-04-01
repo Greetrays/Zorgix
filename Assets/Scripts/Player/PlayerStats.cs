@@ -35,7 +35,7 @@ public abstract class PlayerStats : MonoBehaviour
     
     private void CheckValue(int value)
     {
-        if (value >= 0)
+        if (value > 0)
         {
             _refilling?.Invoke();
             _particle.Play();

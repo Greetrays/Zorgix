@@ -20,7 +20,7 @@ public class ObjectSpawner : Pool
             {
                 TrySpawn(gameObj);
             }
-
+          
             DisableObject();
             _elepsedTime = 0;
         }

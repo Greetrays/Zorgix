@@ -13,10 +13,15 @@ public class StateMachine : MonoBehaviour
 
     public State CurrentState => _currentState;
 
+    private void OnEnable()
+    {
+        SetState(_firstState);
+    }
+
     private void Start()
     {
         _target = GetComponent<Enemy>().Target;
-        Reset(_firstState);
+        SetState(_firstState);
     }
 
     private void Update()
@@ -27,23 +32,15 @@ public class StateMachine : MonoBehaviour
         var next = _currentState.GetNext();
 
         if (next != null)
-            Transit(next);
+            SetState(next);
     }
 
-    private void Reset(State startState)
-    {
-        _currentState = startState;
-
-        if (_currentState != null)
-            _currentState.Enter(_target);
-    }
-
-    private void Transit(State nextState)
+    private void SetState(State state)
     {
         if (_currentState != null)
             _currentState.Exit();
 
-        _currentState = nextState;
+        _currentState = state;
 
         if (_currentState != null)
             _currentState.Enter(_target);

@@ -13,7 +13,8 @@ public abstract class Transition : MonoBehaviour
 
     public void Init(PlayerHealth player)
     {
-        Target = player;
+        //if (Target == null)
+            Target = player;
     }
 
     private void OnEnable()

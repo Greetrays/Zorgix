@@ -25,7 +25,7 @@ public class Spawner : Pool
     private Wave _currentWave;
     private int _currentNumberWave;
 
-    public event UnityAction<float> LaunchingNewWave;
+    public event UnityAction<float, int> LaunchingNewWave;
 
     private void Start()
     {
@@ -34,7 +34,7 @@ public class Spawner : Pool
         Init(_templates);
         _objectSpawner.InitSpawner(_currentWave.TemplatesUpgradeObjects, _currentWave.DelayBetweenSpawnUpgradeObjects);
         _delay = _currentWave.DelayBetweenSpawnEnemy;
-        LaunchingNewWave?.Invoke(_currentWave.Duration);
+        LaunchingNewWave?.Invoke(_currentWave.Duration, _currentNumberWave + 1);
     }
 
     private void Update()
@@ -89,7 +89,7 @@ public class Spawner : Pool
         Init(_templates);
         _delay = _currentWave.DelayBetweenSpawnEnemy;
         _objectSpawner.InitSpawner(_currentWave.TemplatesUpgradeObjects, _currentWave.DelayBetweenSpawnUpgradeObjects);
-        LaunchingNewWave?.Invoke(_currentWave.Duration);
+        LaunchingNewWave?.Invoke(_currentWave.Duration, _currentNumberWave + 1);
     }
 
     private void Spawn(GameObject obj)

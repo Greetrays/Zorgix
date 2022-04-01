@@ -11,7 +11,9 @@ public abstract class State : MonoBehaviour
     {
         if (enabled == false)
         {
-            Target = target;
+            if (Target == null)
+                Target = target;
+
             enabled = true;
 
             foreach (var transition in _transitions)

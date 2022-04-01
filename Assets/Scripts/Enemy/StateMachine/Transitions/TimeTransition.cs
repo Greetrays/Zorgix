@@ -15,6 +15,7 @@ public class TimeTransition : Transition
         if (_elepsedTime >= _duration)
         {
             NeedTransit = true;
-        }    
+            _elepsedTime = 0;
+        }
     }
 }
