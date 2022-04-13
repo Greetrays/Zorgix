@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 public class PlayerArmor : PlayerStats
 {
@@ -30,6 +27,8 @@ public class PlayerArmor : PlayerStats
     {
         if (collision.TryGetComponent(out Armor armore))
         {
+            Refilling();
+
             if (CurrentStats + armore.Count > MaxStats)
             {
                 int newValueStats = MaxStats - CurrentStats;
@@ -46,6 +45,8 @@ public class PlayerArmor : PlayerStats
     {
         if (_playerShield.IsShield == false)
         {
+            Decreasing();
+
             if (CurrentStats > 0)
             {
                 Change(-damage);

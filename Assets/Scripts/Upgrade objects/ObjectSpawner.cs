@@ -33,20 +33,9 @@ public class ObjectSpawner : Pool
         _delay = delay;
     }
 
-    private float GenerateChance()
-    {
-        return Random.Range(0.0f, 1.0f);
-    }
-
     private void TrySpawn(GameObject gameObject)
     {
-        if (gameObject.TryGetComponent(out UpgradeObject obj))
-        {
-            if (GenerateChance() <= obj.Chance)
-            {
-                gameObject.SetActive(true);
-                gameObject.transform.position = new Vector2(Container.position.x, Random.Range(_minSpawnPoint, _maxSpawnPoint));
-            }
-        }
+        gameObject.SetActive(true);
+        gameObject.transform.position = new Vector2(Container.position.x, Random.Range(_minSpawnPoint, _maxSpawnPoint));
     }
 }

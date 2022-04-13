@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class Transition : MonoBehaviour
 {
@@ -13,8 +11,7 @@ public abstract class Transition : MonoBehaviour
 
     public void Init(PlayerHealth player)
     {
-        //if (Target == null)
-            Target = player;
+        Target = player;
     }
 
     private void OnEnable()

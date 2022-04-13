@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(PlayerShield))]
@@ -34,6 +32,8 @@ public class PlayerHealth : PlayerStats
     {
         if (collision.TryGetComponent(out Medicine medicine))
         {
+            Refilling();
+
             if (CurrentStats + medicine.CountHealth > MaxStats)
             {
                 int newValueStats = MaxStats - CurrentStats;
@@ -52,6 +52,8 @@ public class PlayerHealth : PlayerStats
         {
             int fullPercantage = 100;
             int newDamage = damage * (fullPercantage - _playerArmor.CurrentStats) / fullPercantage;
+            
+            Decreasing();
 
             if (CurrentStats - newDamage > 0)
             {

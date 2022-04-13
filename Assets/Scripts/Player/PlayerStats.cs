@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public abstract class PlayerStats : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _decreasing;
-    [SerializeField] private UnityEvent _refilling;
+    [SerializeField] protected UnityEvent _refilling;
+    [SerializeField] protected UnityEvent _decreasing;
+    [SerializeField] protected ParticleSystem _particle;
     [SerializeField] private int _maxStats;
-    [SerializeField] private ParticleSystem _particle;
 
     public int CurrentStats { get; protected set; }
 
@@ -30,19 +28,16 @@ public abstract class PlayerStats : MonoBehaviour
     {
         CurrentStats += value;
         ChangeStats?.Invoke();
-        CheckValue(value);
     }
-    
-    private void CheckValue(int value)
+
+    protected void Refilling()
     {
-        if (value > 0)
-        {
-            _refilling?.Invoke();
-            _particle.Play();
-        }
-        else
-        {
-            _decreasing?.Invoke();
-        }
+        _refilling?.Invoke();
+        _particle.Play();
+    }
+
+    protected void Decreasing()
+    {
+        _decreasing?.Invoke();
     }
 }
