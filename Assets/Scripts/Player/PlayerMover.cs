@@ -8,8 +8,8 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float _minDistanceY;
     [SerializeField] private float _maxDistanceY;
 
-    private Vector3 newTargetPosition;
-    private Vector3 oldPosition;
+    private Vector3 _newTargetPosition;
+    private Vector3 _oldPosition;
     private float _minDistanceX;
 
     private void Start()
@@ -26,11 +26,11 @@ public class PlayerMover : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                newTargetPosition = mousePosition;
-                oldPosition = transform.position;
+                _newTargetPosition = mousePosition;
+                _oldPosition = transform.position;
             }
          
-            transform.position = Vector2.Lerp(transform.position, oldPosition + mousePosition - newTargetPosition, _speedMove * Time.deltaTime); ;
+            transform.position = Vector2.Lerp(transform.position, _oldPosition + mousePosition - _newTargetPosition, _speedMove * Time.deltaTime); ;
             float correctPositionX = Mathf.Clamp(transform.position.x, _minDistanceX, _maxDistanceX);
             float correctPositionY = Mathf.Clamp(transform.position.y, _minDistanceY, _maxDistanceY);
             transform.position = new Vector2(correctPositionX, correctPositionY);

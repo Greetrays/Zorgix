@@ -19,7 +19,7 @@ public class PlayerShield : TemporaryPlayerUpgrade
     {
         if (collision.TryGetComponent(out Shield shield))
         {
-            StartChangeTime();
+            StartChangeTime(shield.TimeAction);
             _shieldSprite.SetActive(true);
             IsShield = true;
         }

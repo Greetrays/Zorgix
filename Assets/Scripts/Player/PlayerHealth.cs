@@ -34,14 +34,14 @@ public class PlayerHealth : PlayerStats
         {
             Refilling();
 
-            if (CurrentStats + medicine.CountHealth > MaxStats)
+            if (CurrentStats + medicine.Count > MaxStats)
             {
                 int newValueStats = MaxStats - CurrentStats;
                 Change(newValueStats);
             }
-            else if (CurrentStats + medicine.CountHealth <= MaxStats)
+            else if (CurrentStats + medicine.Count <= MaxStats)
             {
-                Change(medicine.CountHealth);
+                Change(medicine.Count);
             }
         }
     }

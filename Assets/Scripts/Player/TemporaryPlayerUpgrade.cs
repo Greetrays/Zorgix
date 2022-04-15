@@ -4,11 +4,11 @@ using UnityEngine.Events;
 
 public abstract class TemporaryPlayerUpgrade : MonoBehaviour
 {
-    [SerializeField] private float _timeAction;
     [SerializeField] private UnityEvent _activated;
     [SerializeField] private UnityEvent _disactivated;
     [SerializeField] private ParticleSystem _particle;
 
+    private float _timeAction;
     private float _elepsedTime;
     private Coroutine _changeTime;
 
@@ -32,13 +32,14 @@ public abstract class TemporaryPlayerUpgrade : MonoBehaviour
         _changeTime = null;
     }
 
-    protected void StartChangeTime()
+    protected void StartChangeTime(float timeAction)
     {
         if (_changeTime != null)
         {
             StopCoroutine(_changeTime);
         }
 
+        _timeAction = timeAction;
         _changeTime = StartCoroutine(ChangeTime());
     }
 

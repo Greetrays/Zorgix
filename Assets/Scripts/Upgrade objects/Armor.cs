@@ -2,7 +2,14 @@
 
 public class Armor : UpgradeObject
 {
-    [SerializeField] private int _count;
+    [Header("Характеристики брони")]
+    [SerializeField] private int _currentCount;
+    [SerializeField] private int _boostCount;
 
-    public int Count => _count;
+    public int Count => _currentCount;
+
+    protected override void Upgrade()
+    {
+        _currentCount += _boostCount;
+    }
 }
