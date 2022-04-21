@@ -14,6 +14,7 @@ public class MenuLoader : MonoBehaviour
 
     private void OnEnable()
     {
+        Time.timeScale = 1;
         _improveMenu.ClosedMenu += OnClosedImproveMenu;
     }
 

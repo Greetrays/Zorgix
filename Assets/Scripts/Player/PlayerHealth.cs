@@ -6,8 +6,11 @@ using UnityEngine.Events;
 
 public class PlayerHealth : PlayerStats
 {
+    [SerializeField] private ParticleSystem _diedParticle;
+
     private PlayerShield _playerShield;
     private PlayerArmor _playerArmor;
+    private UnityEvent _died;
 
     public event UnityAction Dying;
 
@@ -67,8 +70,15 @@ public class PlayerHealth : PlayerStats
 
             if (CurrentStats <= 0)
             {
-                Dying?.Invoke();
+                Died();
             }
         }
+    }
+
+    private void Died()
+    {
+        Dying?.Invoke();
+        Instantiate(_diedParticle, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
