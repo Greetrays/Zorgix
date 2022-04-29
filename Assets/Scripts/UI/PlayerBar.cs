@@ -14,12 +14,12 @@ public class PlayerBar : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.ChangeStats += OnChange;
+        _player.ChangeValue += OnChange;
     }
 
     private void OnDisable()
     {
-        _player.ChangeStats -= OnChange;
+        _player.ChangeValue -= OnChange;
     }
 
     private void Start()
@@ -42,9 +42,9 @@ public class PlayerBar : MonoBehaviour
 
     private IEnumerator Change()
     {
-        while(_bar.value != _player.CurrentStats)
+        while(_bar.value != _player.CurrentValue)
         {
-            _bar.value = Mathf.MoveTowards(_bar.value, _player.CurrentStats, _speedChange * Time.deltaTime);
+            _bar.value = Mathf.MoveTowards(_bar.value, _player.CurrentValue, _speedChange * Time.deltaTime);
             _countText.text = System.Convert.ToInt32(_bar.value).ToString();
 
             yield return null;

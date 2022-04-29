@@ -6,20 +6,17 @@ public class PlayerMoney : MonoBehaviour
     [SerializeField] private float _delayBeetwenAddMoney;
     [SerializeField] private PlayerHealth _player;
 
-    [SerializeField] private int _moneyPerLevel;
+    private int _moneyPerLevel;
 
-    private int _money;
     private float _elepsedTime;
     private bool _playerIsAlife;
 
     public event UnityAction<int> Replenishment;
-
-    public int Money => _money;
-    public int MoneyPerLevel => _moneyPerLevel;
+    public event UnityAction<int> Dying;
 
     private void OnEnable()
     {
-        _player.Dying += OnDying;
+        _player.Died += OnDying;
     }
 
     private void Start()
@@ -29,7 +26,7 @@ public class PlayerMoney : MonoBehaviour
 
     private void OnDisable()
     {
-        _player.Dying -= OnDying;
+        _player.Died -= OnDying;
     }
 
     private void Update()
@@ -49,7 +46,7 @@ public class PlayerMoney : MonoBehaviour
 
     private void OnDying()
     {
-        _money += _moneyPerLevel;
+        Dying?.Invoke(_moneyPerLevel);
         _playerIsAlife = false;
     }
 }

@@ -12,7 +12,7 @@ public class PlayerHealth : PlayerStats
     private PlayerArmor _playerArmor;
     private UnityEvent _died;
 
-    public event UnityAction Dying;
+    public event UnityAction Died;
 
     public bool IsShieldActive { get; private set; }
 
@@ -26,7 +26,7 @@ public class PlayerHealth : PlayerStats
 
     private void Start()
     {
-        CurrentStats = MaxStats;
+        CurrentValue = MaxStats;
         _playerShield = GetComponent<PlayerShield>();
         _playerArmor = GetComponent<PlayerArmor>();
     }
@@ -35,14 +35,14 @@ public class PlayerHealth : PlayerStats
     {
         if (collision.TryGetComponent(out Medicine medicine))
         {
-            Refilling();
+            Refill();
 
-            if (CurrentStats + medicine.Count > MaxStats)
+            if (CurrentValue + medicine.Count > MaxStats)
             {
-                int newValueStats = MaxStats - CurrentStats;
+                int newValueStats = MaxStats - CurrentValue;
                 Change(newValueStats);
             }
-            else if (CurrentStats + medicine.Count <= MaxStats)
+            else if (CurrentValue + medicine.Count <= MaxStats)
             {
                 Change(medicine.Count);
             }
@@ -54,30 +54,30 @@ public class PlayerHealth : PlayerStats
         if (_playerShield.IsShield == false)
         {
             int fullPercantage = 100;
-            int newDamage = damage * (fullPercantage - _playerArmor.CurrentStats) / fullPercantage;
+            int newDamage = damage * (fullPercantage - _playerArmor.CurrentValue) / fullPercantage;
             
             Decreasing();
 
-            if (CurrentStats - newDamage > 0)
+            if (CurrentValue - newDamage > 0)
             {
                 Change(-newDamage);
             }
             else
             {
-                newDamage = CurrentStats;
+                newDamage = CurrentValue;
                 Change(-newDamage);
             }
 
-            if (CurrentStats <= 0)
+            if (CurrentValue <= 0)
             {
-                Died();
+                Die();
             }
         }
     }
 
-    private void Died()
+    private void Die()
     {
-        Dying?.Invoke();
+        Died?.Invoke();
         Instantiate(_diedParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

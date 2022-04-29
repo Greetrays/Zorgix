@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Renderer))]
+
 public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private float _speedMove;
@@ -14,8 +16,8 @@ public class PlayerMover : MonoBehaviour
 
     private void Start()
     {
-        float wigthSprite = gameObject.GetComponent<Renderer>().bounds.size.x;
-        _minDistanceX = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + wigthSprite / 2;
+        float widthSprite = gameObject.GetComponent<Renderer>().bounds.size.x;
+        _minDistanceX = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + widthSprite / 2;
     }
 
     private void Update()

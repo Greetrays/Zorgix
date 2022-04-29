@@ -10,18 +10,18 @@ public class Spawner : Pool
     [SerializeField] private float _maxSpawnPoint;
     [SerializeField] private ObjectSpawner _objectSpawner;
 
-    private List<SpawnObject> _templates;
+    private List<SpawnObjectData> _templates;
     private float _elapsedTimeSpawn;
     private float _delay;
 
     [Header("Волны")]
     [SerializeField] private float _delayBeforeStartWave;
     [SerializeField] private Text _newWaveText;
-    [SerializeField] private List<Wave> _waves;
+    [SerializeField] private List<WaveData> _waves;
 
     private float _elepsedTimeBeforStartWave;
     private float _elapsedWaveTime;
-    private Wave _currentWave;
+    private WaveData _currentWave;
     private int _currentNumberWave;
 
     public event UnityAction<float, int> LaunchingNewWave;
@@ -103,21 +103,5 @@ public class Spawner : Pool
     private void SetWave(int numberWave)
     {
         _currentWave = _waves[numberWave];
-    }
-
-    [System.Serializable]
-    public class Wave
-    {
-        [SerializeField] private List<SpawnObject> _templatesEnemys;
-        [SerializeField] private List<SpawnObject> _templatesUpgradeObjects;
-        [SerializeField] private float _duration;
-        [SerializeField] private float _delayBetweenSpawnUpgradeObjects;
-        [SerializeField] private float _delayBetweenSpawnEnemy;
-
-        public float Duration => _duration;
-        public List<SpawnObject> TemplatesEnemys => _templatesEnemys;
-        public List<SpawnObject> TemplatesUpgradeObjects => _templatesUpgradeObjects;
-        public float DelayBetweenSpawnUpgradeObjects => _delayBetweenSpawnUpgradeObjects;
-        public float DelayBetweenSpawnEnemy => _delayBetweenSpawnEnemy;
     }
 }

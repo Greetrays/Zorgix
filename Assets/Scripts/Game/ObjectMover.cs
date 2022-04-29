@@ -33,7 +33,7 @@ public class ObjectMover : MonoBehaviour
         transform.position += _direction * _speedMove * Time.deltaTime;
         int countCollision = _rigidbody.Cast(Vector2.left, _contactFilter2D, _collisionObjects, _minDistanceShieldTrigger);
 
-        if (_player.IsEnergyBarrier)
+        if (_player.IsActive)
         {
             if (countCollision > 0)
             {

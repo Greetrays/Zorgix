@@ -12,7 +12,7 @@ public abstract class Pool : MonoBehaviour
     private List<GameObject> _pool = new List<GameObject>();
     private int _capacity;
 
-    protected void Init(List<SpawnObject> templates)
+    protected void Init(List<SpawnObjectData> templates)
     {
         _pool.Clear();
 
@@ -100,15 +100,5 @@ public abstract class Pool : MonoBehaviour
         {
             objectMover.SetPlayer(_player);
         }
-    }
-
-    [System.Serializable]
-    public class SpawnObject
-    {
-        [SerializeField] private GameObject _template;
-        [SerializeField] private int _count;
-
-        public GameObject Template => _template;
-        public int Count => _count;
     }
 }

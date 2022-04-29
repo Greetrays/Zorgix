@@ -25,7 +25,7 @@ public class ObjectSpawner : Pool
         }
     }
 
-    public void InitSpawner(List<SpawnObject> templates, float delay)
+    public void InitSpawner(List<SpawnObjectData> templates, float delay)
     {
         TryDestroyObjects();
         Init(templates);

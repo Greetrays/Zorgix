@@ -17,7 +17,7 @@ public class GameOverPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.Dying += OnDying;
+        _player.Died += OnDying;
     }
 
     private void Start()
@@ -27,7 +27,7 @@ public class GameOverPanel : MonoBehaviour
 
     private void OnDisable()
     {
-        _player.Dying += OnDying;
+        _player.Died += OnDying;
     }
 
     public void OpenMenu()

@@ -2,7 +2,7 @@
 
 public class PlayerEnergyBarrier : TemporaryPlayerUpgrade
 {
-    public bool IsEnergyBarrier { get; private set; }
+    public bool IsActive { get; private set; }
 
     private void OnEnable()
     {
@@ -19,12 +19,12 @@ public class PlayerEnergyBarrier : TemporaryPlayerUpgrade
         if (collision.TryGetComponent(out EnergyBarrier shield))
         {
             StartChangeTime(shield.TimeAction);
-            IsEnergyBarrier = true;
+            IsActive = true;
         }
     }
 
     private void OnDisactivated()
     {
-        IsEnergyBarrier = false;
+        IsActive = false;
     }
 }

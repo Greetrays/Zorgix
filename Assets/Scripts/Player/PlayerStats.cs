@@ -3,36 +3,36 @@ using UnityEngine.Events;
 
 public abstract class PlayerStats : MonoBehaviour
 {
-    [SerializeField] protected UnityEvent _refilling;
+    [SerializeField] protected UnityEvent _refilled;
     [SerializeField] protected UnityEvent _decreasing;
     [SerializeField] protected ParticleSystem _particle;
-    [SerializeField] private int _maxStats;
+    [SerializeField] private int _maxValue;
 
-    public int CurrentStats { get; protected set; }
+    public int CurrentValue { get; protected set; }
 
-    public event UnityAction ChangeStats;
+    public event UnityAction ChangeValue;
 
     public int MaxStats
     {
         get
         {
-            return _maxStats;
+            return _maxValue;
         }
         protected set
         {
-            _maxStats = MaxStats;
+            _maxValue = MaxStats;
         }
     }
 
     protected void Change(int value)
     {
-        CurrentStats += value;
-        ChangeStats?.Invoke();
+        CurrentValue += value;
+        ChangeValue?.Invoke();
     }
 
-    protected void Refilling()
+    protected void Refill()
     {
-        _refilling?.Invoke();
+        _refilled?.Invoke();
         _particle.Play();
     }
 
