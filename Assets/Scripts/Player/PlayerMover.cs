@@ -5,7 +5,6 @@
 public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private float _speedMove;
-
     [SerializeField] private float _maxDistanceX;
     [SerializeField] private float _minDistanceY;
     [SerializeField] private float _maxDistanceY;

@@ -10,7 +10,6 @@ public class PlayerHealth : PlayerStats
 
     private PlayerShield _playerShield;
     private PlayerArmor _playerArmor;
-    private UnityEvent _died;
 
     public event UnityAction Died;
 
@@ -36,16 +35,7 @@ public class PlayerHealth : PlayerStats
         if (collision.TryGetComponent(out Medicine medicine))
         {
             Refill();
-
-            if (CurrentValue + medicine.Count > MaxStats)
-            {
-                int newValueStats = MaxStats - CurrentValue;
-                Change(newValueStats);
-            }
-            else if (CurrentValue + medicine.Count <= MaxStats)
-            {
-                Change(medicine.Count);
-            }
+            Change(medicine.Count);
         }
     }
 
@@ -57,16 +47,7 @@ public class PlayerHealth : PlayerStats
             int newDamage = damage * (fullPercantage - _playerArmor.CurrentValue) / fullPercantage;
             
             Decreasing();
-
-            if (CurrentValue - newDamage > 0)
-            {
-                Change(-newDamage);
-            }
-            else
-            {
-                newDamage = CurrentValue;
-                Change(-newDamage);
-            }
+            Change(-newDamage);
 
             if (CurrentValue <= 0)
             {

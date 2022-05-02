@@ -27,6 +27,7 @@ public abstract class PlayerStats : MonoBehaviour
     protected void Change(int value)
     {
         CurrentValue += value;
+        CurrentValue = Mathf.Clamp(CurrentValue, 0, MaxStats);
         ChangeValue?.Invoke();
     }
 

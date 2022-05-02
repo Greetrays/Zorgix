@@ -19,10 +19,10 @@ MonoBehaviour:
   _templatesUpgradeObjects:
   - _template: {fileID: 5272385488790594081, guid: 27c2f088f2cca66459688100a8585e83,
       type: 3}
-    _count: 1
+    _count: 5
   - _template: {fileID: 5614241820889140994, guid: 802c75d9b3300aa48a658d0116a2f7a0,
       type: 3}
     _count: 1
   _duration: 50
-  _delayBetweenSpawnUpgradeObjects: 10
+  _delayBetweenSpawnUpgradeObjects: 1
   _delayBetweenSpawnEnemy: 0.2
