@@ -31,13 +31,4 @@ public class PlayerArmor : PlayerStats
             Change(armore.Count);
         }
     }
-
-    public void TakeDamage(int damage)
-    {
-        if (_playerShield.IsShield == false)
-        {
-            Decreasing();
-            Change(-damage);
-        }
-    }
 }

@@ -16,7 +16,16 @@ MonoBehaviour:
   - _template: {fileID: 1293785672839638407, guid: bf3001991d16d8c47921c1bf007a6f10,
       type: 3}
     _count: 40
-  _templatesUpgradeObjects: []
+  _templatesUpgradeObjects:
+  - _template: {fileID: 5614241820889140994, guid: 802c75d9b3300aa48a658d0116a2f7a0,
+      type: 3}
+    _count: 1
+  - _template: {fileID: 5272385488790594081, guid: 27c2f088f2cca66459688100a8585e83,
+      type: 3}
+    _count: 1
+  - _template: {fileID: 8913456926058168828, guid: 97b9490654118224ab2d14c8fb37dc2b,
+      type: 3}
+    _count: 1
   _duration: 20
   _delayBetweenSpawnUpgradeObjects: 1
   _delayBetweenSpawnEnemy: 0.2

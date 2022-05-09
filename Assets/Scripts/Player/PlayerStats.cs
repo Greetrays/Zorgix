@@ -24,6 +24,12 @@ public abstract class PlayerStats : MonoBehaviour
         }
     }
 
+    public virtual void TakeDamage(int damage)
+    {
+        Decreasing();
+        Change(-damage);
+    }
+
     protected void Change(int value)
     {
         CurrentValue += value;

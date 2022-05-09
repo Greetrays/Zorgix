@@ -5,15 +5,10 @@ public class UFODrone : Enemy
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerHealth playerHealth))
+        if (collision.TryGetComponent(out Player player))
         {
             gameObject.SetActive(false);
-            playerHealth.TakeDamage(Damage);
-
-            if (collision.TryGetComponent(out PlayerArmor playerArmor))
-            {
-                playerArmor.TakeDamage(Damage);
-            }
+            player.TakeDamage(Damage);
         }
     }
 }

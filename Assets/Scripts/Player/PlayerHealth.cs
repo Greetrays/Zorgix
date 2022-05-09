@@ -39,20 +39,13 @@ public class PlayerHealth : PlayerStats
         }
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
-        if (_playerShield.IsShield == false)
-        {
-            int fullPercantage = 100;
-            int newDamage = damage * (fullPercantage - _playerArmor.CurrentValue) / fullPercantage;
-            
-            Decreasing();
-            Change(-newDamage);
+        base.TakeDamage(damage);
 
-            if (CurrentValue <= 0)
-            {
-                Die();
-            }
+        if (CurrentValue <= 0)
+        {
+            Die();
         }
     }
 
